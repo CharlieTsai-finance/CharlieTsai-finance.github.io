@@ -5,312 +5,309 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Charlie 哥分享資產配置、現金流、房產活化、負債整理與旅遊回饋等財務觀念，陪你把財務方向整理清楚。">
   <title>Charlie 哥｜財務規劃</title>
-  <style>
-    :root {
-      --bg: #080808;
-      --panel: #141414;
-      --panel-2: #1b1b1b;
-      --text: #f7f7f7;
-      --muted: #b8b8b8;
-      --line: #303030;
-      --accent: #d4b98b;
-      --button: #ffffff;
-      --button-text: #111111;
-      --radius: 24px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1080px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      min-height: 90vh;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 80px 0 56px;
-      background:
-        radial-gradient(circle at 50% 15%, rgba(255,255,255,.09), transparent 32%),
-        linear-gradient(180deg, #111 0%, #080808 72%);
-    }
-
-    .brand {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--accent);
-      letter-spacing: .18em;
-      font-size: .9rem;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 10vw, 6.5rem);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .subtitle {
-      margin: 16px 0 0;
-      font-size: clamp(1.4rem, 4vw, 2.3rem);
-      font-weight: 600;
-    }
-
-    .hero-copy {
-      max-width: 650px;
-      margin: 28px auto 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-    }
-
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin: 32px 0;
-    }
-
-    .keywords span {
-      padding: 10px 18px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.03);
-    }
-
-    .cta {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 58px;
-      padding: 14px 30px;
-      border-radius: 18px;
-      background: var(--button);
-      color: var(--button-text);
-      font-weight: 800;
-      font-size: 1.05rem;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 36px rgba(255,255,255,.16);
-    }
-
-    .cta-note {
-      color: var(--muted);
-      margin-top: 12px;
-      font-size: .92rem;
-    }
-
-    section { padding: 78px 0; }
-
-    .section-title {
-      text-align: center;
-      margin: 0 0 12px;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
-    }
-
-    .section-intro {
-      max-width: 620px;
-      margin: 0 auto 34px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .service-card {
-      display: block;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(145deg, var(--panel-2), var(--panel));
-      transition: transform .22s ease, border-color .22s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: #666;
-    }
-
-    .service-card:last-child { grid-column: 1 / -1; }
-
-    .service-number {
-      display: inline-grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      margin-bottom: 18px;
-      color: #111;
-      background: var(--accent);
-      font-weight: 900;
-    }
-
-    .service-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.35rem;
-    }
-
-    .service-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .principles {
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
-    }
-
-    .principles ul {
-      margin: 0;
-      padding-left: 1.3rem;
-    }
-
-    .principles li + li { margin-top: 10px; }
-
-    .contact {
-      text-align: center;
-      padding-bottom: 100px;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 0 48px;
-      color: #929292;
-      font-size: .88rem;
-      text-align: center;
-    }
-
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 1080px); }
-      .hero { min-height: auto; padding-top: 70px; }
-      .services { grid-template-columns: 1fr; }
-      .service-card:last-child { grid-column: auto; }
-      section { padding: 58px 0; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
-  </style>
+  <meta name="google-site-verification" content="dehwiREAU8UrZuBb0fLCAAeDNoxtRQiPd84wSUQvjbA">
+  <link rel="canonical" href="https://charlietsai-finance.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="Charlie 哥｜財務規劃">
+  <meta property="og:title" content="Charlie 哥｜財務規劃">
+  <meta property="og:description" content="Charlie 哥分享資產配置、現金流、房產活化、負債整理與旅遊回饋等財務觀念，陪你把財務方向整理清楚。">
+  <meta property="og:url" content="https://charlietsai-finance.github.io/">
+  <!-- 待補：og:image / twitter:image。images/og-image.jpg 推送上線並確認可公開開啟後再加入。 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRCL8Q5HNV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CRCL8Q5HNV');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="brand">FINANCIAL PLANNING</div>
+
+<a class="skip" href="#main">跳到主要內容</a>
+
+<nav class="nav" id="site-nav" aria-label="主要導覽">
+  <div class="wrap nav-bar">
+    <a class="brand" href="#top">Charlie 哥</a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav-list" aria-label="開啟選單">
+      <span class="menu-bars" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-list" id="nav-list">
+      <li><a href="#about">關於</a></li>
+      <li><a href="#services">服務項目</a></li>
+      <li><a href="#suitable">適合對象</a></li>
+      <li><a href="#process">流程</a></li>
+      <li><a href="#faq">常見問題</a></li>
+      <li><a class="btn btn-sm js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="navigation">預約一對一財務整理</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
       <h1>Charlie 哥</h1>
-      <p class="subtitle">財務規劃</p>
-      <p class="hero-copy">用簡單好懂的方式，陪你把財務方向整理清楚。</p>
-
-      <div class="keywords" aria-label="主要服務主題">
-        <span>資產配置</span>
-        <span>增加現金流</span>
-        <span>房產活化</span>
-      </div>
-
-      <a class="cta" href="https://forms.gle/QNcVXi3F6iNcerqZ8" target="_blank" rel="noopener noreferrer">
-        預約一對一財務整理
-      </a>
-      <div class="cta-note">填表約 1 分鐘，我會再與你聯絡</div>
+      <p class="hero-desc">用簡單好懂的方式，陪你把財務方向整理清楚。</p>
+      <ul class="tags" aria-label="主要分享主題">
+        <li>資產配置</li>
+        <li>增加現金流</li>
+        <li>房產活化</li>
+      </ul>
+      <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="hero">預約一對一財務整理</a>
+      <p class="sub">填表約 1 分鐘，我會再與你聯絡</p>
     </div>
-  </header>
+    <img class="photo" src="images/charlie-profile.jpg" width="800" height="1422" alt="Charlie 哥的人物照片" fetchpriority="high">
+  </div>
+</header>
 
-  <main>
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">服務項目</h2>
-        <p class="section-intro">點開每個主題，先用簡單的方式了解內容，再決定是否預約。</p>
+<section class="about" id="about">
+  <div class="wrap narrow">
+    <h2>關於 Charlie 哥</h2>
+    <p class="intro">主要分享資產配置、現金流及房產活化的理財觀念 💰</p>
+    <div class="path">
+      <div class="row">
+        <h3>餐飲</h3>
+        <p>放棄接手家裡豆花店的機會，後來自己開早餐店，以失敗收場，也真正體會現實的殘酷。</p>
+      </div>
+      <div class="row">
+        <h3>軍中</h3>
+        <p>志願入伍，在軍中磨出紀律與抗壓。</p>
+      </div>
+      <div class="row now">
+        <h3>金融</h3>
+        <ul>
+          <li>從業務做到年度業績王，決定轉戰完全陌生的金融業，從零開始。</li>
+          <li>累積經手資產規模破億，更確定想把財務觀念說清楚。</li>
+          <li>開始帶領自己的團隊，持續陪更多人整理財務方向。</li>
+        </ul>
+      </div>
+    </div>
+    <p class="hi">我是 Charlie 哥，很高興認識大家。</p>
+  </div>
+</section>
 
-        <div class="services">
-          <a class="service-card" href="#" aria-label="資產配置與累積，內容頁待建立">
-            <span class="service-number">1</span>
-            <h3>資產配置與累積</h3>
-            <p>先看清楚現有資產，再安排下一步的累積方向。</p>
-          </a>
+<section id="services">
+  <div class="wrap">
+    <h2>服務項目</h2>
+    <p class="lead">點開每個主題，先用簡單的方式了解內容，再決定是否預約。</p>
+    <div class="acc">
 
-          <a class="service-card" href="#" aria-label="增加被動收入與現金流，內容頁待建立">
-            <span class="service-number">2</span>
-            <h3>增加被動收入與現金流</h3>
-            <p>整理每月資金流向，逐步建立更有餘裕的財務節奏。</p>
-          </a>
-
-          <a class="service-card" href="#" aria-label="房地產資產活化，內容頁待建立">
-            <span class="service-number">3</span>
-            <h3>房地產資產活化</h3>
-            <p>重新檢視房產的持有成本、現金流與整體資產角色。</p>
-          </a>
-
-          <a class="service-card" href="#" aria-label="降低貸款與負債壓力，內容頁待建立">
-            <span class="service-number">4</span>
-            <h3>降低貸款與負債壓力</h3>
-            <p>盤點貸款與負債條件，釐清還款順序與每月壓力。</p>
-          </a>
-
-          <a class="service-card" href="#" aria-label="旅遊里程與信用卡回饋，內容頁待建立">
-            <span class="service-number">5</span>
-            <h3>旅遊里程與信用卡回饋</h3>
-            <p>依照消費與旅遊習慣，整理簡單、容易執行的用卡方向。</p>
-          </a>
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="svc-btn-1" aria-expanded="false" aria-controls="svc-panel-1">
+            <span class="num" aria-hidden="true">1</span>
+            <span class="ttl"><strong>資產配置與累積</strong><span>先看清楚現有資產，再安排下一步的累積方向。</span></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="svc-panel-1" role="region" aria-labelledby="svc-btn-1">
+          <div class="panel-clip"><div class="panel-in">
+            <dl>
+              <dt>核心說明</dt><dd>先把存款、投資、保險與其他資產一次盤點清楚，了解各自的角色與比重，再討論之後的累積方向。</dd>
+              <dt>適合情況</dt><dd>資產分散在不同地方、不確定整體狀況；想開始累積，但不知道從哪裡著手。</dd>
+              <dt>可協助整理</dt><dd>現有資產總覽、短中長期目標、每月可投入的金額。</dd>
+            </dl>
+            <p class="note">提醒：本服務以觀念與試算整理為主，不推薦特定投資標的。</p>
+            <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="service_accordion" data-service="asset-allocation">預約一對一財務整理</a>
+          </div></div>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div class="container">
-        <h2 class="section-title">我的原則</h2>
-        <p class="section-intro">先把現況與方向整理清楚，再思考下一步。</p>
-        <div class="principles">
-          <ul>
-            <li>不保證任何報酬，也不做績效承諾。</li>
-            <li>網站與私訊內容以一般觀念與試算整理為主。</li>
-            <li>不直接推薦特定投資標的，實際決策仍應依個人情況評估。</li>
-          </ul>
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="svc-btn-2" aria-expanded="false" aria-controls="svc-panel-2">
+            <span class="num" aria-hidden="true">2</span>
+            <span class="ttl"><strong>增加被動收入與現金流</strong><span>整理每月資金流向，逐步建立更有餘裕的財務節奏。</span></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="svc-panel-2" role="region" aria-labelledby="svc-btn-2">
+          <div class="panel-clip"><div class="panel-in">
+            <dl>
+              <dt>核心說明</dt><dd>從每月的收入與支出出發，看清楚資金流向，找出可以調整的空間，逐步建立更有餘裕的財務節奏。</dd>
+              <dt>適合情況</dt><dd>收入不低，但月底常常沒有餘裕；想了解如何讓現金流更穩定。</dd>
+              <dt>可協助整理</dt><dd>固定與變動支出、現有收入來源、預備金的規劃方向。</dd>
+            </dl>
+            <p class="note">提醒：被動收入的來源與金額因人而異，並非每個人都適用同一種方式。</p>
+            <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="service_accordion" data-service="cash-flow">預約一對一財務整理</a>
+          </div></div>
         </div>
       </div>
-    </section>
 
-    <section class="contact">
-      <div class="container">
-        <h2 class="section-title">想請我幫你看看？</h2>
-        <p class="section-intro">看完還有疑問，或想了解自己適合先整理哪一項，可以先填寫表單。</p>
-        <a class="cta" href="https://forms.gle/QNcVXi3F6iNcerqZ8" target="_blank" rel="noopener noreferrer">
-          預約一對一財務整理
-        </a>
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="svc-btn-3" aria-expanded="false" aria-controls="svc-panel-3">
+            <span class="num" aria-hidden="true">3</span>
+            <span class="ttl"><strong>房地產資產活化</strong><span>重新檢視房產的持有成本、現金流與整體資產角色。</span></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="svc-panel-3" role="region" aria-labelledby="svc-btn-3">
+          <div class="panel-clip"><div class="panel-in">
+            <dl>
+              <dt>核心說明</dt><dd>重新檢視手上房產的持有成本、現金流與在整體資產中的角色，一起思考不同的運用方向。</dd>
+              <dt>適合情況</dt><dd>名下有房產，想了解持有成本與資金運用；考慮自住、出租或其他安排。</dd>
+              <dt>可協助整理</dt><dd>持有成本與貸款、租金或使用情況、不同方案的比較。</dd>
+            </dl>
+            <p class="note">提醒：房產相關決定涉及稅務、法規與市場變動，實際執行前請諮詢相關專業人士。</p>
+            <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="service_accordion" data-service="property-activation">預約一對一財務整理</a>
+          </div></div>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>把財務方向整理清楚</p>
-      <p>風險提醒：本站內容為一般資訊與觀念分享，不構成個人化投資、法律、稅務或財務建議。投資與借貸均有風險，請依個人情況審慎評估。</p>
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="svc-btn-4" aria-expanded="false" aria-controls="svc-panel-4">
+            <span class="num" aria-hidden="true">4</span>
+            <span class="ttl"><strong>降低貸款與負債壓力</strong><span>盤點貸款與負債條件，釐清還款順序與每月壓力。</span></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="svc-panel-4" role="region" aria-labelledby="svc-btn-4">
+          <div class="panel-clip"><div class="panel-in">
+            <dl>
+              <dt>核心說明</dt><dd>盤點各項貸款與負債的條件，釐清還款順序與每月壓力，找出比較容易執行的調整方向。</dd>
+              <dt>適合情況</dt><dd>同時有多筆貸款或卡費；覺得每月還款壓力偏大。</dd>
+              <dt>可協助整理</dt><dd>貸款金額、利率與期限一覽、還款順序的討論、每月壓力的試算。</dd>
+            </dl>
+            <p class="note">提醒：借貸有風險，請依自身情況審慎評估。</p>
+            <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="service_accordion" data-service="debt-management">預約一對一財務整理</a>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="svc-btn-5" aria-expanded="false" aria-controls="svc-panel-5">
+            <span class="num" aria-hidden="true">5</span>
+            <span class="ttl"><strong>旅遊里程與信用卡回饋</strong><span>依照消費與旅遊習慣，整理簡單、容易執行的用卡方向。</span></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="svc-panel-5" role="region" aria-labelledby="svc-btn-5">
+          <div class="panel-clip"><div class="panel-in">
+            <dl>
+              <dt>核心說明</dt><dd>依照你的消費與旅遊習慣，整理簡單、容易執行的用卡方向，不為了回饋而增加不必要的支出。</dd>
+              <dt>適合情況</dt><dd>常刷卡或常出國；想把日常消費的回饋用得更有效率。</dd>
+              <dt>可協助整理</dt><dd>每月消費類型、現有信用卡的用途、里程或回饋的使用方式。</dd>
+            </dl>
+            <p class="note">提醒：回饋條件常有變動，請以各發卡機構公告為準，並留意信用卡使用風險。</p>
+            <a class="btn js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="service_accordion" data-service="travel-rewards">預約一對一財務整理</a>
+          </div></div>
+        </div>
+      </div>
+
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="alt-bg" id="suitable">
+  <div class="wrap">
+    <h2>適合哪些人</h2>
+    <p class="lead">如果你有下面的想法，可以先填表聊聊。</p>
+    <ul class="who">
+      <li>想把資產、收入與支出整理清楚，但不知道從哪裡開始</li>
+      <li>手上有房產或多筆貸款，想了解整體負擔與運用方向</li>
+      <li>想為退休預先規劃，先看清楚目前的位置</li>
+    </ul>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2>規劃流程</h2>
+    <p class="lead">三個步驟，每一步都由你決定要不要繼續。</p>
+    <ol class="steps">
+      <li class="step"><div class="n">Step 1</div><h3>填寫表單</h3><p>填表約 1 分鐘，簡單說明你目前最想整理的主題。</p></li>
+      <li class="step"><div class="n">Step 2</div><h3>等我聯絡</h3><p>我會再與你聯絡，先了解你的狀況與想法。</p></li>
+      <li class="step"><div class="n">Step 3</div><h3>一起整理</h3><p>陪你看清現況，找出適合的方向。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="prin" id="principles">
+  <div class="wrap narrow">
+    <h2>我的原則</h2>
+    <p>先把現況與方向整理清楚，再思考下一步。</p>
+    <ul>
+      <li>不保證任何報酬，也不做績效承諾。</li>
+      <li>網站與私訊內容以一般觀念與試算整理為主。</li>
+      <li>不直接推薦特定投資標的，實際決策仍應依個人情況評估。</li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap narrow">
+    <h2>常見問題</h2>
+    <div class="acc">
+
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1">
+            <span class="ttl"><strong>填完表單之後會發生什麼事？</strong></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+          <div class="panel-clip"><div class="panel-in"><p>我會再與你聯絡，先了解你想整理的主題與目前的狀況。</p></div></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
+            <span class="ttl"><strong>我不確定該從哪一項開始，可以先填嗎？</strong></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+          <div class="panel-clip"><div class="panel-in"><p>可以。表單裡簡單說明你的現況就好，我們再一起看適合先整理哪一項。</p></div></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <h3>
+          <button class="acc-btn" type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
+            <span class="ttl"><strong>我填寫的資料會怎麼使用？</strong></span>
+            <span class="ico" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+          <div class="panel-clip"><div class="panel-in"><p>你在 Google 表單填寫的資料，僅用於聯絡與了解你的需求。</p></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>想請我幫你看看？</h2>
+    <p>看完還有疑問，或想了解自己適合先整理哪一項，可以先填寫表單。</p>
+    <a class="btn btn-light js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="final_cta">預約一對一財務整理</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><strong>Charlie 哥｜財務規劃</strong>　把財務方向整理清楚</p>
+    <p>風險提醒：本站內容為一般資訊與觀念分享，不構成個人化投資、法律、稅務或財務建議。投資與借貸均有風險，請依個人情況審慎評估。</p>
+    <p>隱私說明：本站使用 Google Analytics 了解網站瀏覽情形，並以 Google 表單收集你主動填寫的資料，僅用於聯絡與了解你的需求。</p>
+    <a class="btn btn-sm btn-light js-form-cta" href="https://forms.gle/vixHLzFrf3bTh84g8" target="_blank" rel="noopener noreferrer" data-cta-location="footer">預約一對一財務整理</a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
