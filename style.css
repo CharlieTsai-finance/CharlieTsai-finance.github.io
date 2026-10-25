@@ -157,7 +157,7 @@ p, li, dd { text-wrap: pretty; }
 .panel dl { display: grid; grid-template-columns: 7em 1fr; gap: 10px 16px; margin-bottom: 18px; }
 .panel dt { color: var(--tan-deep); font-weight: 700; }
 .panel dd { margin: 0; }
-.panel-in > .btn { margin-bottom: 20px; }
+.panel-in > .btn { display: flex; width: fit-content; margin-bottom: 28px; }
 .note { font-size: 14px; color: var(--note); margin-bottom: 18px; background: var(--cream); border-radius: 10px; padding: 10px 14px; }
 
 .js .panel { transition: grid-template-rows .3s ease, visibility .3s; }
