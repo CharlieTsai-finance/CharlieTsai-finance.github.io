@@ -53,7 +53,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--tan); outline-o
 .narrow { max-width: 820px; }
 section { padding: 64px 0; scroll-margin-top: var(--nav-h); }
 p, li, dd { text-wrap: pretty; }
-.who li, .step p, .path .now li { text-wrap: balance; }
+.who li, .step p { text-wrap: balance; }
+.path .now li span { display: inline-block; }
 .lead { color: var(--mute); max-width: 36em; margin-bottom: 28px; }
 .alt-bg { background: var(--sand); }
 
