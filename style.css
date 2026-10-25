@@ -59,7 +59,7 @@ section { padding: 84px 0; scroll-margin-top: var(--nav-h); }
 .btn-sm { padding: 8px 20px; min-height: 44px; font-size: 15px; }
 .btn-light { background: var(--cream); color: var(--navy); }
 .btn-light:hover { background: #fff; }
-.sub { font-size: 14px; color: var(--mute); margin-top: 12px; }
+.hero-note { font-size: 15px; color: var(--mute); max-width: 26em; }
 
 /* Nav */
 .nav {
@@ -92,7 +92,7 @@ section { padding: 84px 0; scroll-margin-top: var(--nav-h); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(40px, 5.2vw, 60px); margin-bottom: 18px; }
 .hero-desc { font-size: 19px; max-width: 23em; margin-bottom: 22px; }
-.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
 .tags li { background: var(--sand); color: var(--navy); padding: 5px 14px; border-radius: 999px; font-size: 15px; }
 .photo {
   width: 100%; height: auto; max-height: 640px;
