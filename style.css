@@ -79,7 +79,7 @@ section { padding: 88px 0; scroll-margin-top: var(--nav-h); }
 }
 .nav-bar { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); }
 .brand { font-weight: 700; color: var(--navy); font-size: 20px; text-decoration: none; letter-spacing: .02em; }
-.brand:hover { color: var(--green); }
+.brand:hover { color: var(--navy); }
 .nav-list { display: flex; gap: 26px; align-items: center; font-size: 15px; }
 .nav-list a:not(.btn) { color: var(--ink); text-decoration: none; padding: 10px 0; display: inline-block; }
 .nav-list a:not(.btn):hover { color: var(--green); text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--tan); text-decoration-thickness: 2px; }
@@ -99,7 +99,7 @@ section { padding: 88px 0; scroll-margin-top: var(--nav-h); }
 .menu[aria-expanded="true"] .menu-bars::after { top: 0; transform: rotate(-45deg); }
 
 /* Hero */
-.hero { padding: 72px 0 92px; scroll-margin-top: 0; background: radial-gradient(60% 70% at 85% 40%, rgba(185, 138, 74, .13), transparent 70%); }
+.hero { padding: 72px 0 92px; scroll-margin-top: var(--nav-h); background: radial-gradient(60% 70% at 85% 40%, rgba(185, 138, 74, .13), transparent 70%); }
 .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(40px, 5.2vw, 60px); margin-bottom: 18px; }
 .hero h1::after { content: none; }
@@ -185,12 +185,12 @@ section { padding: 88px 0; scroll-margin-top: var(--nav-h); }
 .prin li::before { content: ""; position: absolute; left: 0; top: 15px; width: 14px; height: 2px; background: var(--tan); }
 
 /* Final CTA */
-.final { background: var(--green); text-align: center; color: #E9E6DF; }
+.final { background: var(--green); text-align: center; color: #E9E6DF; padding: 56px 0; }
 .final h2 { color: #fff; }
 .final p { margin: 0 auto; max-width: 30em; }
 
 /* Footer */
-.footer { background: var(--navy-deep); color: #B9BDC6; padding: 36px 0; font-size: 14px; line-height: 1.9; }
+.footer { background: var(--navy-deep); color: #B9BDC6; padding: 28px 0; font-size: 14px; line-height: 1.8; }
 .footer .wrap { display: grid; gap: 8px; justify-items: start; }
 .footer strong { color: #fff; }
 .footer .btn { margin-top: 10px; }
@@ -200,6 +200,7 @@ section { padding: 88px 0; scroll-margin-top: var(--nav-h); }
 @media (max-width: 760px) {
   body { font-size: 16px; }
   section { padding: 56px 0; }
+  .final { padding: 40px 0; }
   .wrap { padding: 0 20px; }
 
   .menu { display: inline-flex; }
